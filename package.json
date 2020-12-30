@@ -1,7 +1,7 @@
 {
-  "name": "css-and-javascript-calendar",
+  "name": "vanilla-js-month-calendar",
   "version": "1.0.0",
-  "description": "This is a static template with no bundling",
+  "description": "A graphical pleasing month calendar using just vanilla JavaScript, css and html. Thanks to Cre3z",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

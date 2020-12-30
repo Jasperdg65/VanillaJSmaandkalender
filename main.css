@@ -13,7 +13,7 @@ body {
 }
 
 .month {
-  padding: 70px 25px;
+  padding: 10px;
   width: 100%;
   background: #1abc9c;
   text-align: center;
@@ -59,10 +59,12 @@ body {
   padding: 15px;
   margin: 3px;
   border: 1px solid #ccc;
+  cursor: pointer;
 }
 
 #days li.empty {
   border: none;
+  cursor: default;
 }
 
 #days li.active {

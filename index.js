@@ -38,6 +38,14 @@ prevBtn.onclick = function () {
 // init calendar
 showCalendar(month, year);
 
+function showDate(e) {
+  let showYear = e.getAttribute("data-year");
+  let showMonth = e.getAttribute("data-month");
+  let showDay = e.getAttribute("data-day");
+  document.getElementById("select").innerHTML =
+    showDay + " " + months[showMonth] + " " + showYear;
+}
+
 function showCalendar(month, year) {
   // gets the day of the week for this date
   let firstDay = new Date(year, month).getDay();
@@ -48,7 +56,8 @@ function showCalendar(month, year) {
 
   // adding the blank boxes so that date start on correct day of the week
   // substracting 1 to set monday as the first weekday
-  blankDates(firstDay - 1);
+  // and testing for sunday because it became the 7th day
+  blankDates(firstDay === 0 ? 6 : firstDay - 1);
   // adding the dates to the calendar
   for (let day = 1; day <= totalDays; day++) {
     // create li node with text content & apend to body
@@ -71,6 +80,9 @@ function showCalendar(month, year) {
     //appending li to body of calendar
     cell.classList.add("singleDay");
     cell.appendChild(cellText);
+    cell.onclick = function (e) {
+      showDate(e.target);
+    };
     calendarBody.appendChild(cell);
   }
 
