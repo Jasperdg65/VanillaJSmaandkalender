@@ -43,7 +43,7 @@ function showDate(e) {
   let showMonth = e.getAttribute("data-month");
   let showDay = e.getAttribute("data-day");
   document.getElementById("select").innerHTML =
-    showDay + " " + months[showMonth] + " " + showYear;
+    "You have clicked " + showDay + " " + months[showMonth] + " " + showYear;
 }
 
 function showCalendar(month, year) {
