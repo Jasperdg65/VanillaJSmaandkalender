@@ -20,10 +20,11 @@ let months = [
   "November",
   "December"
 ];
-
 // next and previous functionality
 let nextbtn = document.getElementById("next");
 let prevBtn = document.getElementById("prev");
+
+document.onload = document.onresize = showScreenSize();
 
 nextbtn.onclick = function () {
   next();
@@ -37,6 +38,14 @@ prevBtn.onclick = function () {
 
 // init calendar
 showCalendar(month, year);
+
+function showScreenSize() {
+  // screen width and height
+  let screen_width = document.documentElement.clientWidth;
+  let screen_height = document.documentElement.clientHeight;
+  document.getElementById("select").innerHTML =
+    "sw " + screen_width + " sh" + screen_height;
+}
 
 function showDate(e) {
   let showYear = e.getAttribute("data-year");
